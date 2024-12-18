@@ -1,0 +1,10 @@
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+- role: control-plane
+  extraPortMappings:
+  - containerPort: 30000    # Container port inside the node
+    hostPort: 30000        # Port exposed on your host machine
+    protocol: TCP          # Protocol for the port mapping
+- role: worker             # First worker node
+- role: worker             # Second worker node
